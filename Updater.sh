@@ -3,7 +3,7 @@
 clear
 
 echo "==============================="
-echo "     Pi-Hole Update Helper     "
+echo "        Pi-Hole Updater        "
 echo "==============================="
 echo " "
 
@@ -25,13 +25,13 @@ echo "Done!"
 echo " "
 sleep 2
 
-echo "Updating Raspberry Pi..."
+echo "Updating Linux..."
 sudo apt-get update
 echo "Done!"
 echo " "
 sleep 2
 
-echo "Upgrading Raspberry Pi..."
+echo "Upgrading Linux..."
 sudo apt-get upgrade
 echo "Done!"
 
