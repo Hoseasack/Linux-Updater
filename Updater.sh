@@ -2,6 +2,29 @@
 
 clear
 
+if [ -f settings ]; then
+  echo "==============================="
+  echo "           Settings            "
+  echo "==============================="
+  echo " "
+  echo "Would you like to reboot after updating?"
+  read $Rebooting
+  cd /
+  sudo rm settings
+
+  if [ $Rebooting = "no" ]; then
+    cd /
+    if [ ! -f reboot ]; then
+      sudo touch reboot
+    fi
+  else
+    cd /
+    sudo rm reboot
+  fi
+fi
+
+clear
+
 echo "==============================="
 echo "        Pi-Hole Updater        "
 echo "==============================="
@@ -37,7 +60,11 @@ echo "Done!"
 
 echo " "
 
-echo "Rebooting in 5 seconds..."
-echo "Have a nice day!"
-sleep 5
-sudo reboot
+cd /
+
+if [ ! -f reboot ]; then
+        echo "Rebooting in 5 seconds..."
+        echo "Have a nice day!"
+        sleep 5
+        sudo reboot
+fi
