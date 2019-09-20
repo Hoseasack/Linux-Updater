@@ -2,6 +2,8 @@
 
 clear
 
+cd /
+
 if [ -f settings ]; then
   echo "==============================="
   echo "           Settings            "
