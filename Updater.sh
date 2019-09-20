@@ -16,9 +16,7 @@ if [ -f settings ]; then
 
   if [ $Rebooting = "no" ]; then
     cd /
-    if [ ! -f reboot ]; then
-      sudo touch reboot
-    fi
+    sudo touch reboot
   else
     cd /
     sudo rm reboot
