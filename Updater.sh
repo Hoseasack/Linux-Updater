@@ -69,4 +69,6 @@ if [ ! -f reboot ]; then
         echo "Have a nice day!"
         sleep 5
         sudo reboot
+else
+  echo "All done! Have a nice day!"
 fi
