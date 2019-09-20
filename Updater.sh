@@ -5,12 +5,13 @@ clear
 cd /
 
 if [ -f settings ]; then
+  Rebooting=""
   echo "==============================="
   echo "           Settings            "
   echo "==============================="
   echo " "
   echo "Would you like to reboot after updating?"
-  read $Rebooting
+  read 000Rebooting
   cd /
   sudo rm settings
 
