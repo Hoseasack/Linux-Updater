@@ -12,4 +12,3 @@ Right now only recent versions are supported.
 ## Reporting a Vulnerability
 
 To report a vulnerability, go to shameuni.weebly.com/contact.html and report the problem.
-
