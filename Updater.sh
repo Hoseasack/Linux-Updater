@@ -2,17 +2,17 @@
 
 clear
 
-cd /
+cd ~
 
-if [ ! -d /Pi-hole ]; then
+if [ ! -d ~/Linux-Updater ]; then
   echo "Making directory..."
-  sudo mkdir -p /Pi-hole
-  cd /Pi-hole
+  sudo mkdir -p ~Linux-Updater
+  cd ~/Linux-Updater
   sudo touch settings
   echo "Please run the updater again to finsh setup."
 else
 
-  cd /Pi-hole
+  cd ~/Linux-Updater
 
   if [ -f settings ]; then
     Rebooting=""
@@ -25,36 +25,36 @@ else
     read Rebooting
 
     if [ $Rebooting = "no" ]; then
-      cd /Pi-hole
+      cd ~/Linux-Updater
       sudo touch reboot
     else
-      cd /Pi-hole
+      cd ~/Linux-Updater
       sudo rm reboot
     fi
       echo "Would you like to remove the logs?"
       read Logs
 
     if [ $Logs = "no" ]; then
-        cd /Pi-hole
+        cd ~/Linux-Updater
         sudo touch logs
     else
-        cd /Pi-hole
+        cd ~/Linux-Updater
         sudo rm logs
     fi
-    cd /Pi-hole
+    cd ~/Linux-Updater
     sudo rm settings
   fi
 
   clear
   echo  "==============================="
-  echo  "        Pi-Hole Updater        "
+  echo  "         Linux Updater         "
   echo  "==============================="
   echo " "
 
-  echo "All's good, starting  helper."
+  echo "All's good, starting updater."
   sleep 1
 
-  cd /Pi-hole
+  cd ~/Linux-Updater
 
   if [ ! -f logs ]; then
     echo "Deleting Logs..."
@@ -86,7 +86,7 @@ else
 
   echo " "
 
-  cd /Pi-hole
+  cd ~/Linux-Updater
 
   if [ ! -f reboot ]; then
     echo "Rebooting in 5 seconds..."
