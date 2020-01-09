@@ -17,6 +17,9 @@ else
   if [ -f settings ]; then
     Rebooting=""
     Logs=""
+    Software=""
+    Type=""
+
     echo "==============================="
     echo "           Settings            "
     echo "==============================="
@@ -41,8 +44,23 @@ else
         cd ~/Linux-Updater
         sudo rm logs
     fi
+    echo "Do you have one of these installed? (1=Pi-Hole, 2=MagicMirror, any other number to skip)"
+    if [ $Software = "yes" ]; then
+        read Type
+        if [ $Type = "1" ]; then
+          touch Pi-hole
+        elif [ $Type = "2" ]; then
+          touch MagicMirror
+        else
+          echo "Skipping setting."
+        fi
+      else
+        rm Pi-hole MagicMirror
+      fi
+    else
     cd ~/Linux-Updater
     sudo rm settings
+    fi
   fi
 
   clear
@@ -88,6 +106,22 @@ else
 
   cd ~/Linux-Updater
 
+  if [ -f Pi-hole ]; then
+    echo "Updating Pi-Hole..."
+    pihole -up
+    echo "Done!"
+  elif [ -f MagicMirror ]; then
+    echo "Updating MagicMirror..."
+    cd ~/MagicMirror
+    sudo git pull
+    echo "Done!"
+  fi
+
+  echo ""
+  sleep 2
+
+  cd ~/Linux-updater
+
   if [ ! -f reboot ]; then
     echo "Rebooting in 5 seconds..."
     echo "Have a nice day!"
@@ -97,4 +131,4 @@ else
     echo "All done! Have a nice day!"
   fi
 
-fi 
+fi
