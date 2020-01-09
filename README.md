@@ -1,5 +1,5 @@
-# Pi-Hole-Updater
-A simple easy to use updater for Pi-Hole running on Debian.
+# Linux-Updater
+A simple easy to use updater for Debian/Ubuntu.
 To use, refer to the *Quick Start Guide* in the wiki.
 
-NOTICE: THIS SCRIPT IS INTENDED FOR THE RASPBERRY PI RUNNING DEBIAN. THIS SCRIPT MAY NOT WORK ON OTHER HARDWARE/DISTROS. USE AT YOUR OWN RISK!
+NOTICE: THIS SCRIPT IS INTENDED FOR SYSTEMS USING DEBIAN/UBUNTU OR OTHER DISTROS BASED OFF OF THEM. THIS SCRIPT WILL NOT WORK WITH OTHER DISTROS.
