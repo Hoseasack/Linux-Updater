@@ -91,13 +91,13 @@ else
   sleep 2
 
   echo "Updating Linux..."
-  sudo apt-get update
+  sudo apt-get update -y
   echo "Done!"
   echo " "
   sleep 2
 
   echo "Upgrading Linux..."
-  sudo apt-get upgrade
+  sudo apt-get upgrade -y
   echo "Done!"
   echo " "
 
