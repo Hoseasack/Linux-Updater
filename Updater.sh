@@ -70,7 +70,6 @@ else
   echo " "
 
   echo "All's good, starting updater."
-  sleep 1
 
   cd ~/Linux-Updater
 
