@@ -45,9 +45,8 @@ else
         sudo rm logs
     fi
     echo "Do you have one of these installed? (1=Pi-Hole, 2=MagicMirror, any other number to skip)"
-    if [ $Software = "yes" ]; then
-        read Type
-        if [ $Type = "1" ]; then
+    read Type
+    if [ $Type = "1" ]; then
           touch Pi-hole
         elif [ $Type = "2" ]; then
           touch MagicMirror
@@ -55,7 +54,7 @@ else
           echo "Skipping setting."
         fi
       else
-        rm Pi-hole MagicMirror
+        rm Pi-hole && rm MagicMirror
       fi
     else
     cd ~/Linux-Updater
@@ -100,7 +99,6 @@ else
   echo "Upgrading Linux..."
   sudo apt-get upgrade
   echo "Done!"
-
   echo " "
 
   cd ~/Linux-Updater
